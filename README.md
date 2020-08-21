@@ -41,6 +41,18 @@ the backup will be stored.
 - `--tenant-id`: The tenant ID for the service principal
 - `--subscription-id`: The subscription ID where the APIM instance is hosted
 
+##### Examples
+
+```bash
+# CLIENT_ID, CLIENT_KEY, TENANT_ID, SUBSCRIPTION_ID all stored in environment vars
+apim_restore.py -g "apim-rg" -n "apim-instance" --storage-account "apimsa" --container "backups" --storage-account-key "<saKey>"
+```
+
+```bash
+apim_restore.py -g "apim-rg" -n "apim-instance" --storage-account "apimsa" --container "backups" --storage-account-key "<saKey>" \
+  --client-id <clientId> --tenant-id <tenantId> --subscription-id <subId> --client-key <clientKey>
+```
+
 #### apim_restore.py
 
  **NOTE**: The service principal parameters may be provided via environment variables rather than interactively 
@@ -57,3 +69,15 @@ the backup will be stored.
 - `--client-key`: The secret key for the service principal
 - `--tenant-id`: The tenant ID for the service principal
 - `--subscription-id`: The subscription ID where the APIM instance is hosted
+
+##### Examples
+
+```bash
+# CLIENT_ID, CLIENT_KEY, TENANT_ID, SUBSCRIPTION_ID all stored in environment vars
+apim_restore.py -g "apim-rg" -n "apim-instance" --storage-account "apimsa" --container "backups" --backup-file-name "apimbackup08020414 --storage-account-key "<saKey>"
+```
+
+```bash
+apim_restore.py -g "apim-rg" -n "apim-instance" --storage-account "apimsa" --container "backups" --backup-file-name "apimbackup08020414 --storage-account-key "<saKey>" \
+  --client-id <clientId> --tenant-id <tenantId> --subscription-id <subId> --client-key <clientKey>
+```
